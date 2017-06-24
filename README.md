@@ -1,2 +1,2 @@
-# convexsheep_cuhacks3
+# peloton_cuhacks3
 CUHACKS3 Project 

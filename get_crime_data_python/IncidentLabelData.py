@@ -19,12 +19,19 @@ def get_address(whole):
 
 
 def to_text():
+    count = 0
     f= open("testfile.txt","w+") #wwrites to text file
-    for element in events:
+    f.write('[')
+    for element in events: 
         exact_location = get_address(element)
-        if len(exact_location) != 0:
+        if len(exact_location) != 0 and count < 1000:
+            count = count + 1
+            indexP = exact_location.find(',')
+            f.write('"')
             f.write(exact_location)
-            f.write('\n')
+            f.write('"')
+            f.write(',')
+    f.write(']')       
     f.close()
 with open('CrimeData.csv', 'r') as data:
     incidents = data.readlines()
